@@ -5,7 +5,7 @@
         "version": "1.0.0",
         "title": "Marketplace API"
     },
-    "host": "localhost:3002",
+    "host": "https://monitorrindodeploymaster.cyclic.app",
     "basePath": "/api",
     "tags": [
         {
