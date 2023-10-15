@@ -19,7 +19,7 @@ class Server{
       
       app.use(cors({
         origin: (origin, callback) => {
-          const allowedOrigins = [`http://localhost:${config.port},https://monitorrindodeploymaster.cyclic.app/`]; 
+          const allowedOrigins = ['http://localhost:${config.port}', 'https://monitorrindodeploymaster.cyclic.app'];
           if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
           } else {
@@ -29,6 +29,7 @@ class Server{
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true
       }));
+      
       app.use(express.json()) 
     }
   
