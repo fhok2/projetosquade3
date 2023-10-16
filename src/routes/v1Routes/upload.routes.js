@@ -20,7 +20,7 @@ const router = Router()
 router.post('/upload', 
   auth,
   acessControl(typeUserEnum.ADMIN),
-  upload.array('file'), 
+  upload.array('image'), 
   uploadFilesController.uploadFile
 );
 
