@@ -18,9 +18,10 @@ class Server{
     async middlewares(app) {
       
       app.use(cors({
-        origin: ['http://localhost:5173', 'https://monitorrindodeploymaster.cyclic.app'],
+        origin: '*',
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
+
       }));
       
       
