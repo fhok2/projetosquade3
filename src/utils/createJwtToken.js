@@ -4,14 +4,15 @@ const { sign } = require("jsonwebtoken");
 
 async function createJwtToken (user) {
   const { id, email, typeUser,fullName } = user;
+  const expirationTime = config.jwtExpiresIn
   const payload = {
     id,
     email,
     fullName,
     role: typeUser,
-    exp: Math.floor(Date.now() / 1000) + config.jwtExpiresIn,
+   
   };
-  const token = await sign(payload, config.jwtSecret);
+  const token = await sign(payload, config.jwtSecret,{ expiresIn: expirationTime });
   return token;
 }
 
