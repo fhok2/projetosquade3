@@ -9,6 +9,7 @@ async function createJwtToken (user) {
     email,
     fullName,
     role: typeUser,
+    exp: Math.floor(Date.now() / 1000) + config.jwtExpiresIn,
   };
   const token = await sign(payload, config.jwtSecret);
   return token;
