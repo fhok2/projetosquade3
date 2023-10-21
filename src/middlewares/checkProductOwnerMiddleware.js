@@ -32,7 +32,7 @@ async function checkProductOwner(req, res, next) {
 
     if(existingProperties.includes("imageLink") ){
 
-      if (!imageLink || imageLink.trim() === 0) {
+      if (!imageLink &&  imageLink.trim() === 0) {
 
         
         return res
