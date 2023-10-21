@@ -32,9 +32,9 @@ async function checkProductOwner(req, res, next) {
 
     if(existingProperties.includes("imageLink") ){
 
-      if (imageLink || imageLink.trim() === 0) {
+      if (!imageLink || imageLink.trim() === 0) {
 
-        console.log("entrou aqui")
+        
         return res
           .status(HTTP_STATUS.BAD_REQUEST)
           .send(ERROR_MESSAGES.INVALID_IMAGE_LINK);
@@ -43,7 +43,7 @@ async function checkProductOwner(req, res, next) {
 
     if(existingProperties.includes("dosage") ){
         
-      if (dosage || typeof dosage === 'number' && !Number.isNaN(dosage) && dosage > 0 && dosage !== null) {
+      if (!dosage && dosage > 0 && dosage !== null) {
           return res
             .status(HTTP_STATUS.BAD_REQUEST)
             .send(ERROR_MESSAGES.INVALID_DOSAGE);
