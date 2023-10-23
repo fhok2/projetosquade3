@@ -23,6 +23,7 @@ const ERROR_MESSAGES = {
   UNAUTHORIZED: {
     message: "Usuário não autorizado",
     code: "UNAUTHORIZED",
+    cause: "Usuário não autorizado para esta operação",
   },
   UNREGISTERED_USER:{
     message: "Usuário não cadastrado",
@@ -158,7 +159,10 @@ INVALID_DATA_BODY: {
     code: "INVALID_TYPE_USER",
   },
   
-
+  BAD_REQUEST_LOGIN: {
+    message: "Os campos email e password são obrigatórios",
+    code: "BAD_REQUEST_LOGIN"
+  }
 
 };
 
