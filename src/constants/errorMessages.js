@@ -25,6 +25,11 @@ const ERROR_MESSAGES = {
     code: "UNAUTHORIZED",
     cause: "Usuário não autorizado para esta operação",
   },
+  UNAUTHORIZED_LOGIN: {
+    message: "Usuário não autorizado",
+    code: "UNAUTHORIZED_LOGIN",
+    cause: "Email ou senha incorretos",
+  },
   UNREGISTERED_USER:{
     message: "Usuário não cadastrado",
     code: "UNREGISTERED_USER",
@@ -69,6 +74,7 @@ const ERROR_MESSAGES = {
   FORBIDDEN: {
     message: "Usuário não autorizado",
     code: "FORBIDDEN",
+    cause: "Usuário não autorizado para esta operação",
   },
   NOT_FOUND: {
     message: "Não encontrado",
