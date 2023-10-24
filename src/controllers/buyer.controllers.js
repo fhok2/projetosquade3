@@ -44,6 +44,7 @@ class BuyerController {
           email: user.email,
           cpf: user.cpf,
           phone: user.phone,
+          birthDate: user.birthDate,
           typeUser: user.typeUser,
           createdAt: user.createdAt,
         };
@@ -83,6 +84,7 @@ class BuyerController {
         name: foundUser.fullName,
         email: foundUser.email,
         cpf: foundUser.cpf,
+        birthDate: foundUser.birthDate,
         createdAt: foundUser.createdAt,
         updatedAt: foundUser.updatedAt,
       };
