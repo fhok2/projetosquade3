@@ -80,6 +80,8 @@ class BuyerController {
         name: foundUser.fullName,
         email: foundUser.email,
         cpf: foundUser.cpf,
+        phone: foundUser.phone,
+        typeUser: foundUser.typeUser,
         birthDate: foundUser.birthDate,
         createdAt: foundUser.createdAt,
         updatedAt: foundUser.updatedAt,
