@@ -10,18 +10,14 @@ class BuyerController {
   async listBuyers(req, res) {
     const { offset = 0, limit = 20 } = req.params;
     const { fullName, orderBy, orderDirection } = req.query;
-    const filter = typeUserEnum.BUYER;
-
     try {
-      const whereClause = {
-        typeUser: filter,
-      };
+      const whereClause = {};
       if (fullName) {
         whereClause.fullName = {
           [Sequelize.Op.iLike]: `%${fullName}%`,
         };
       }
-
+    
       const order = [];
       if (orderBy) {
         if (orderDirection === "asc") {
