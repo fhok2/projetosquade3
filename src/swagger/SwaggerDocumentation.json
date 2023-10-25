@@ -1454,6 +1454,9 @@
         "User": {
             "type": "object",
             "properties": {
+                "id": {
+                    "type": "number"
+                },
                 "fullName": {
                     "type": "string"
                 },
@@ -1479,11 +1482,6 @@
                     "maxLength": 11,
                     "example": "11999999999"
                 },
-                "password": {
-                    "type": "string",
-                    "minLength": 8,
-                    "example": "123Senha@"
-                },
                 "typeUser": {
                     "type": "string",
                     "default": "BUYER"
@@ -1507,8 +1505,11 @@
                         "$ref": "#/definitions/User"
                     }
                 },
-                "count": {
-                    "type": "integer"
+                "currentPage": {
+                    "type": "number"
+                },
+                "totalPages": {
+                    "type": "number"
                 }
             }
         },
