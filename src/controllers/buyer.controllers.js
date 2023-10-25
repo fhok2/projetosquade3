@@ -17,7 +17,7 @@ class BuyerController {
           [Sequelize.Op.iLike]: `%${fullName}%`,
         };
       }
-    
+
       const order = [];
       if (orderBy) {
         if (orderDirection === "asc") {
@@ -32,6 +32,8 @@ class BuyerController {
         offset: Number(offset),
         limit: Number(limit),
       });
+
+      const totalPages = Math.ceil(count / limit);
 
       const userData = users.map((user) => {
         return {
@@ -51,8 +53,9 @@ class BuyerController {
       }
 
       res.status(HTTP_STATUS.OK).send({
-        total: count,
-        userData,
+        users: userData,
+        totalPages,
+        currentPage: offset / limit + 1,
       });
     } catch (error) {
       console.error(error);
@@ -145,7 +148,6 @@ class BuyerController {
         foundUser.phone = phone;
       }
 
-
       if (typeUser !== undefined) {
         if (
           typeUser.includes(typeUserEnum.BUYER) ||
@@ -158,7 +160,6 @@ class BuyerController {
             .send(ERROR_MESSAGES.INVALID_TYPE_USER);
         }
       }
-
 
       await foundUser.save();
 
