@@ -121,10 +121,10 @@ class ProductController {
       ...(req.body.name && {name: req.body.name}),
       ...(req.body.imageLink && {imageLink: req.body.imageLink}),
       ...(req.body.dosage && {dosage: req.body.dosage}),
-      ...(req.body.totalStock && {totalStock: req.body.totalStock})  
+      ...(req.body.totalStock && {totalStock: req.body.totalStock}),
+      ...(req.body.unitPrice && {unitPrice: req.body.unitPrice})  
     };
 
-    console.log(product)
 
     try {
       const updatedProduct = await productMIddleware.update(product);
